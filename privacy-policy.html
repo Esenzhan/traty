@@ -11,7 +11,7 @@
 <p class="lang"><a href="#en">English version below</a></p>
 
 <h1>Политика конфиденциальности</h1>
-<p class="meta">Действует с 17 октября 2026 года, обновлена 5 ноября 2026 года</p>
+<p class="meta">Действует с 17 октября 2026 года, обновлена 8 ноября 2026 года</p>
 
 <p>Эта политика относится к мобильному приложению Traty («приложение»), которое разрабатывает Yessenzhan Nurbayev, Казахстан («мы»). В ней сказано, какие данные остаются на вашем телефоне, какие и когда попадают на наш сервер и какие компании их обрабатывают.</p>
 
@@ -25,10 +25,12 @@
 <ul>
 <li>сам общий бюджет, его категории, лимиты, регулярные платежи и записи, а также остаток: у каждого участника свой (его видит только он) или, если так решил владелец, один на всех участников;</li>
 <li>имена участников бюджета и кто из них сделал запись — это видят остальные участники бюджета;</li>
+<li>цвет и иконка вашего счёта, в котором лежит общий бюджет, — чтобы он выглядел одинаково на всех ваших устройствах;</li>
 <li>приглашения: кто, кого и в какой бюджет пригласил, а также отклонённые приглашения — чтобы человека, который отказался, нельзя было снова позвать без ссылки. Ссылки-приглашения хранятся только в виде хеша, без самой ссылки; почту приглашённого мы не запрашиваем;</li>
 <li>выбранная тема оформления, дата начала пробного периода и сведения о подписке Traty Plus (какая и до какого числа), которые присылает RevenueCat, а если Plus подарен вам нами, — тариф и срок подарка;</li>
 <li>семья Traty Plus: кто в чьей семье и ссылки-приглашения в неё (только хеш) — имя владельца семьи видят её участники, а он — их имена и почту.</li>
 </ul>
+<p>Общие бюджеты хранятся на сервере без сквозного шифрования: соединение с сервером защищено (HTTPS), резервные копии базы зашифрованы, но технический доступ к базе есть у нас как у владельца сервера. Мы не просматриваем записи пользователей.</p>
 <p>Если вы входите через Apple, мы также храним ключ, выданный Apple для вашего входа, — чтобы при удалении учётной записи отозвать вход Traty в вашем Apple ID.</p>
 <p>Когда вы выходите из учётной записи, мы храним отпечаток (хеш) прежнего ключа входа до конца его срока, чтобы им больше нельзя было войти.</p>
 <p>В России и Узбекистане (по региону в настройках телефона) «Совместный доступ» недоступен, и приложение не обращается к нашему серверу: не отправляет на него ни данных, ни отчётов об ошибках. Покупка Traty Plus и там проходит через магазин и RevenueCat (раздел ниже).</p>
@@ -55,13 +57,13 @@
 
 <h2>Уведомления</h2>
 <p>Разрешение на уведомления приложение спрашивает при первом запуске; если вы разрешили, включается ежедневное напоминание, которое можно изменить или выключить в «Настройки» → «Уведомления». Напоминания ставит в расписание сам телефон.</p>
-<p>Если вы вошли в учётную запись и разрешили уведомления, мы присылаем push-уведомления через службу Apple (Apple Push Notification service) о событиях в общих бюджетах и семье Traty Plus: приглашения, кто присоединился или вышел, удалённые бюджеты, новые записи других участников (имя, сумма, категория и название бюджета) и лимиты категорий, которые почти исчерпаны или превышены. Для этого мы храним адрес вашего телефона для уведомлений (токен) и язык приложения; при выходе из учётной записи токен удаляется. Уведомления о тратах и лимитах выключаются в «Настройки» → «Уведомления», все уведомления — в настройках iPhone.</p>
+<p>Если вы вошли в учётную запись и разрешили уведомления, мы присылаем push-уведомления — на iPhone через службу Apple (Apple Push Notification service), на Android через Google (Firebase Cloud Messaging) — о событиях в общих бюджетах и семье Traty Plus: приглашения, кто присоединился или вышел, удалённые бюджеты, новые записи других участников (имя, сумма, категория и название бюджета) и лимиты бюджета или категорий, которые почти исчерпаны или превышены. Для этого мы храним адрес вашего телефона для уведомлений (токен) и язык приложения; при выходе из учётной записи токен удаляется. Уведомления о тратах и лимитах выключаются в «Настройки» → «Уведомления», все уведомления — в настройках телефона.</p>
 
 <h2>Кто ещё обрабатывает данные</h2>
 <p>У каждой из этих компаний своя политика конфиденциальности:</p>
 <ul>
-<li><b>Google</b> — вход через Google, Google Play;</li>
-<li><b>Apple</b> — вход через Apple, App Store, покупки в приложении, доставка push-уведомлений, iCloud Drive (если включено «Облачное хранение»), обезличенные отчёты о сбоях (если вы разрешили делиться аналитикой);</li>
+<li><b>Google</b> — вход через Google, Google Play, доставка push-уведомлений на Android (Firebase Cloud Messaging);</li>
+<li><b>Apple</b> — вход через Apple, App Store, покупки в приложении, проверка новой версии в App Store, доставка push-уведомлений на iPhone, iCloud Drive (если включено «Облачное хранение»), обезличенные отчёты о сбоях (если вы разрешили делиться аналитикой);</li>
 <li><b>RevenueCat</b> (RevenueCat, Inc., США) — учёт подписок Traty Plus: сведения о покупке и идентификатор, без почты, имени и записей;</li>
 <li><b>Hoster.kz</b> (ТОО «Компания Hoster.KZ») — сервер и его база данных;</li>
 <li><b>PS Cloud</b> (ТОО «Интернет-компания PS») — хранение зашифрованных резервных копий базы.</li>
@@ -90,7 +92,7 @@
 <hr id="en">
 
 <h1>Privacy Policy</h1>
-<p class="meta">Effective 17 October 2026, updated 5 November 2026</p>
+<p class="meta">Effective 17 October 2026, updated 8 November 2026</p>
 
 <p>This policy covers the Traty mobile app (“the app”) developed by Yessenzhan Nurbayev, Kazakhstan (“we”). It explains what stays on your phone, what reaches our server and when, and which companies process it.</p>
 
@@ -104,10 +106,12 @@
 <ul>
 <li>the shared budget, its categories, limits, regular payments and entries, and its balance: each member’s own (only they see it) or, if the owner chose so, one for all members;</li>
 <li>the members’ names and which member made an entry — other members of that budget see them;</li>
+<li>the colour and icon of your account that holds a shared budget, so that it looks the same on all your devices;</li>
 <li>invitations: who invited whom into which budget, and declined invitations — so that someone who declined can’t be invited again without a link. Invitation links are kept only as a hash, never the link itself; we don’t ask for the invitee’s email;</li>
 <li>your chosen theme, the trial start date and your Traty Plus subscription details (which plan and until when) sent by RevenueCat, and, if we gave you Plus as a gift, the plan and how long it lasts;</li>
 <li>Traty Plus family: who is in whose family and invitation links to it (only a hash) — members see the family owner’s name, and the owner sees their names and emails.</li>
 </ul>
+<p>Shared budgets are stored on the server without end-to-end encryption: the connection to the server is protected (HTTPS) and database backups are encrypted, but we, as the server’s owner, have technical access to the database. We do not look at users’ entries.</p>
 <p>If you sign in with Apple, we also keep the token Apple issued for your sign-in, so that we can revoke Traty’s access to your Apple ID when you delete your account.</p>
 <p>When you sign out, we keep a fingerprint (hash) of your old sign-in key until it would have expired, so that it can no longer be used.</p>
 <p>Shared access is not available in Russia and Uzbekistan (by the region set on the phone), and there the app does not contact our server: it sends it neither data nor crash reports. Buying Traty Plus still goes through the store and RevenueCat there (see below).</p>
@@ -134,13 +138,13 @@
 
 <h2>Notifications</h2>
 <p>The app asks for permission to send notifications on first launch; if you allow it, a daily reminder is turned on, which you can change or turn off in Settings → Notifications. Reminders are scheduled by the phone itself.</p>
-<p>If you are signed in and allow notifications, we send push notifications through Apple Push Notification service about what happens in shared budgets and your Traty Plus family: invitations, who joined or left, deleted budgets, new entries by other members (name, amount, category and budget name), and category limits nearly used up or exceeded. For this we keep your phone's notification address (token) and the app's language; signing out deletes the token. Spending and limit notifications can be turned off in Settings → Notifications, all notifications in the iPhone's settings.</p>
+<p>If you are signed in and allow notifications, we send push notifications — on iPhone through Apple Push Notification service, on Android through Google (Firebase Cloud Messaging) — about what happens in shared budgets and your Traty Plus family: invitations, who joined or left, deleted budgets, new entries by other members (name, amount, category and budget name), and budget or category limits nearly used up or exceeded. For this we keep your phone's notification address (token) and the app's language; signing out deletes the token. Spending and limit notifications can be turned off in Settings → Notifications, all notifications in the phone's settings.</p>
 
 <h2>Third-party processors</h2>
 <p>Each of these companies has its own privacy policy:</p>
 <ul>
-<li><b>Google</b> — Sign in with Google, Google Play;</li>
-<li><b>Apple</b> — Sign in with Apple, App Store, in-app purchases, push notification delivery, iCloud Drive (if Cloud backup is on), anonymous crash reports (if you allowed sharing analytics);</li>
+<li><b>Google</b> — Sign in with Google, Google Play, push notification delivery on Android (Firebase Cloud Messaging);</li>
+<li><b>Apple</b> — Sign in with Apple, App Store, in-app purchases, checking the App Store for a new version, push notification delivery on iPhone, iCloud Drive (if Cloud backup is on), anonymous crash reports (if you allowed sharing analytics);</li>
 <li><b>RevenueCat</b> (RevenueCat, Inc., USA) — keeps track of Traty Plus subscriptions: purchase details and an identifier, with no email, name or entries;</li>
 <li><b>Hoster.kz</b> — hosts our server and its database;</li>
 <li><b>PS Cloud</b> — stores encrypted backups of the database.</li>
