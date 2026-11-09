@@ -23,7 +23,7 @@
   .switch button { flex: 1; border: 0; background: none; color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; padding: 9px 0; border-radius: 999px; cursor: pointer; transition: background .25s, color .25s; }
   .switch button.on { background: var(--pill); color: var(--pillInk); }
   .video { position: relative; width: 100%; max-width: 360px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 24px; overflow: hidden; background: var(--card); }
-  .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #000; }
   .soon { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; background: var(--violet); color: #fff; }
   .soon svg { width: 44px; height: 44px; margin-bottom: 10px; }
   .soon b { font-size: 22px; margin-bottom: 6px; }
@@ -76,12 +76,11 @@
   </footer>
 </main>
 <script>
-  // YouTube ids of the videos (unlisted), by language and iOS. Empty – «the video is coming».
-  var VIDEOS = {
-    kk: { "26": "WhEeoVAZdbM", "27": "J2dIdOgLX3w" },
-    ru: { "26": "2ia4xncPvDc", "27": "nv09Pa7kN0g" },
-    en: { "26": "", "27": "" }
-  };
+  // The videos are our own files next to the page (videos/<lang>-<ios>.mp4, 1080p H.264,
+  // with a first-frame poster), played by the phone's own player – YouTube drew its
+  // Shorts bar, likes and channel over them (2026-11-10). A language without its own
+  // video shows «the video is coming».
+  var VIDEOS = { kk: ["26", "27"], ru: ["26", "27"], en: [] };
 
   // The app opens this page with ?lang=kk|ru|en; without it – the browser's language.
   // Steps are the app's own («Настройки» → «Быстрые кнопки»), word for word.
@@ -200,15 +199,18 @@
   function show(version) {
     ios = version;
     document.querySelectorAll("[data-ios]").forEach(function (b) { b.className = b.getAttribute("data-ios") === version ? "on" : ""; });
-    var id = (VIDEOS[lang] || {})[version];
     video.innerHTML = "";
-    if (id) {
-      var frame = document.createElement("iframe");
-      frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0&playsinline=1&modestbranding=1";
-      frame.title = T.title + " – iOS " + version;
-      frame.allow = "accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen";
-      frame.allowFullscreen = true;
-      video.appendChild(frame);
+    if ((VIDEOS[lang] || []).indexOf(version) >= 0) {
+      var player = document.createElement("video");
+      var name = "videos/" + lang + "-" + version;
+      player.src = name + ".mp4";
+      player.poster = name + ".jpg";
+      player.controls = true;
+      player.playsInline = true;
+      player.preload = "metadata";
+      player.setAttribute("playsinline", "");
+      player.title = T.title + " – iOS " + version;
+      video.appendChild(player);
     } else {
       video.innerHTML = '<div class="soon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b></b><p></p></div>';
       video.querySelector("b").textContent = T.soon;
