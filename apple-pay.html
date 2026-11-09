@@ -36,9 +36,13 @@
   li:first-child { border-top: 0; }
   li i { flex: none; width: 28px; height: 28px; border-radius: 8px; background: var(--violet); color: #fff; font-style: normal; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; }
   .note { color: var(--soft); font-size: 15px; text-align: center; margin-top: 8px; }
-  .langs { display: flex; justify-content: center; gap: 8px; margin-top: 28px; }
-  .langs a { color: var(--soft); text-decoration: none; font-size: 15px; padding: 6px 12px; border-radius: 999px; }
-  .langs a.on { background: var(--card); color: var(--ink); font-weight: 600; }
+  .langs { margin-left: auto; align-self: flex-start; display: flex; background: var(--card); border-radius: 999px; padding: 3px; }
+  .langs a { color: var(--soft); text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 10px; border-radius: 999px; }
+  .langs a.on { background: var(--pill); color: var(--pillInk); }
+  footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--line); text-align: center; color: var(--soft); font-size: 13px; }
+  footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-bottom: 8px; }
+  footer a { color: var(--soft); }
+  footer p { margin: 0; }
 </style>
 </head>
 <body>
@@ -46,6 +50,11 @@
   <div class="brand">
     <img src="icon.png" alt="" onerror="this.remove()">
     <div><b>Traty</b><span data-t="brand"></span></div>
+    <nav class="langs">
+      <a href="?lang=kk" data-lang="kk">ҚАЗ</a>
+      <a href="?lang=ru" data-lang="ru">РУС</a>
+      <a href="?lang=en" data-lang="en">ENG</a>
+    </nav>
   </div>
   <h1 data-t="title"></h1>
   <p class="lead" data-t="lead"></p>
@@ -61,11 +70,10 @@
   <div id="stages"></div>
   <p class="note" data-t="note"></p>
 
-  <nav class="langs">
-    <a href="?lang=kk" data-lang="kk">Қазақша</a>
-    <a href="?lang=ru" data-lang="ru">Русский</a>
-    <a href="?lang=en" data-lang="en">English</a>
-  </nav>
+  <footer>
+    <div class="links"><a href="privacy-policy.html" data-t="privacy"></a><a href="terms.html" data-t="terms"></a><a href="mailto:traty.help@gmail.com" data-t="help"></a></div>
+    <p>© 2026 Traty · Yessenzhan Nurbayev</p>
+  </footer>
 </main>
 <script>
   // YouTube ids of the videos (unlisted), by language and iOS. Empty – «the video is coming».
@@ -87,6 +95,7 @@
       older: "iOS 18 и старше – по шагам ниже.",
       steps: "Шаги",
       note: "Те же шаги есть в Traty: «Настройки» → «Быстрые кнопки».",
+      privacy: "Конфиденциальность", terms: "Условия", help: "Поддержка",
       stages: [
         { title: "Создайте автоматизацию", steps: [
           "В «Командах» – вкладка «Автоматизация» → «+» и выберите «Транзакция» (в новых iOS – «Wallet»).",
@@ -109,6 +118,7 @@
       older: "iOS 18 және одан ескі – төмендегі қадамдармен.",
       steps: "Қадамдар",
       note: "Осы қадамдар Traty-да да бар: «Баптаулар» → «Жылдам пәрмендер».",
+      privacy: "Құпиялылық", terms: "Шарттар", help: "Қолдау",
       stages: [
         { title: "Автоматтандыру жасаңыз", steps: [
           "«Пәрмендер» қолданбасында «Автоматтандыру» қойындысы → «+» → «Wallet» таңдаңыз.",
@@ -131,6 +141,7 @@
       older: "iOS 18 and older – follow the steps below.",
       steps: "Steps",
       note: "The same steps are in Traty: Settings → Shortcuts.",
+      privacy: "Privacy", terms: "Terms", help: "Support",
       stages: [
         { title: "Create the automation", steps: [
           "In Shortcuts – the Automation tab → “+” and choose “Transaction” (“Wallet” in newer iOS).",
