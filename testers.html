@@ -13,8 +13,9 @@
   .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
   .brand img { width: 52px; height: 52px; border-radius: 12px; }
   .brand b { display: block; font-size: 20px; }
-  .brand span { color: var(--soft); font-size: 15px; }
-  .langs { margin-left: auto; align-self: flex-start; display: flex; background: var(--card); border-radius: 999px; padding: 3px; }
+  .brand span { color: var(--soft); font-size: 15px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .brand > div { min-width: 0; }
+  .langs { flex: none; margin-left: auto; align-self: flex-start; display: flex; background: var(--card); border-radius: 999px; padding: 3px; }
   .langs a { color: var(--soft); text-decoration: none; font-size: 13px; font-weight: 600; padding: 6px 10px; border-radius: 999px; }
   .langs a.on { background: var(--pill); color: var(--pillInk); }
   h1 { font-size: 32px; line-height: 1.12; letter-spacing: -0.6px; margin: 0 0 12px; }
